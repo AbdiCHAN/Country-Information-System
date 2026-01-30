@@ -317,4 +317,8 @@ git push origin main
 ---
 
 ## 📌 License
+<<<<<<< HEAD
 Educational project — Summative assessment
+=======
+Educational project — Summative assessment
+>>>>>>> 58d87914d43a1a6ee46a88cabb688e6f28f241cf
