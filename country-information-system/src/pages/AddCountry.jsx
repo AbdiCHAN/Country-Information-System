@@ -10,6 +10,9 @@ export default function AddCountry() {
     flag: "",
   });
 
+  // State to store the list of added countries
+  const [countries, setCountries] = useState([]);
+
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -21,7 +24,10 @@ export default function AddCountry() {
       return;
     }
 
-    alert("Country successfully added (demo only)");
+    // Add the new country to the list
+    setCountries([...countries, form]);
+
+    // Clear the form
     setForm({ name: "", capital: "", region: "", population: "", flag: "" });
   };
 
@@ -70,6 +76,35 @@ export default function AddCountry() {
 
         <button type="submit">Add Country</button>
       </form>
+
+      {/* Display added countries */}
+      {countries.length > 0 && (
+        <div className="added-countries">
+          <h2>Added Countries</h2>
+          {countries.map((country, index) => (
+            <div key={index} className="country-card">
+              <h3>{country.name}</h3>
+              <p>
+                <strong>Capital:</strong> {country.capital} <br />
+                <strong>Region:</strong> {country.region} <br />
+                {country.population && (
+                  <>
+                    <strong>Population:</strong> {country.population} <br />
+                  </>
+                )}
+              </p>
+              {country.flag && (
+                <img
+                  src={country.flag}
+                  alt={`${country.name} flag`}
+                  width="120"
+                  style={{ border: "1px solid #ccc" }}
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }
