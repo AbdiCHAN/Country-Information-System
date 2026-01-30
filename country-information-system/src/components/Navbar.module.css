@@ -1,0 +1,39 @@
+
+body{
+    margin: 0;
+    margin-top: 0px;
+}
+
+
+
+
+.navii{
+    border:none;
+    padding: 1rem 7rem;
+    background-color: aliceblue;
+    justify-content:end ;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    gap: 20px;
+    font-weight: bold;
+    
+}
+
+.navii a{
+    text-decoration: none;
+    margin-bottom: 23px;
+    margin-top: 1.5rem
+
+}
+
+.sign{
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: rgb(9, 9, 188);
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}

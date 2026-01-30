@@ -1,0 +1,27 @@
+*{
+    margin-bottom: 0;
+}
+.STL{
+    background-color: aliceblue;
+    
+}
+
+.foot{
+    margin-top: 3rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    
+
+}
+
+
+
+.foot p{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+     padding-bottom: 2rem;
+}
+.foot h1{
+    padding-top: 2rem;
+}
