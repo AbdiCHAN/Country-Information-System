@@ -1,15 +1,15 @@
 # 🌍 Country Information System
 
 ## 📖 Project Overview
-Country Information System is a frontend-only application built with React. The application consumes data from public country APIs using the Fetch API and custom React hooks. It demonstrates modern frontend development practices such as client-side routing, advanced state management, controlled forms, and component testing.
+Country Information System is a frontend-only React application that consumes data from public country APIs using the Fetch API and custom React hooks. The app demonstrates modern frontend development practices including client-side routing, state management, controlled forms, component testing, and responsive design.
 
-This project was developed as part of a summative lab assessment and focuses strictly on frontend concepts without implementing a backend server. The `package.json` file is used only for dependency management and development scripts and does not function as a backend.
+This project was created as part of a summative lab assessment and focuses strictly on frontend concepts. The `package.json` is used solely for dependency management and development scripts; no backend is implemented.
 
 ---
 
 ## ✨ Features
-- Country search by name with real-time filtering
-- Display of country flag, name, and capital
+- Search countries by name with real-time filtering
+- Display country flag, name, and capital
 - Detailed country information view
 - Region-based filtering (Africa, Europe, Asia, etc.)
 - Fully responsive design for mobile and desktop
@@ -20,22 +20,20 @@ This project was developed as part of a summative lab assessment and focuses str
 ---
 
 ## 🧭 Application Pages
-- **Home Page** – Displays all countries with search and filtering functionality
+- **Home Page** – Displays all countries with search and filtering
 - **Dashboard Page** – Shows countries grouped by region
-- **Country Details Page** – Displays detailed information for a selected country
-- **Add Country Page** – Controlled form to add country data (frontend state only)
+- **Country Details Page** – Displays detailed info for a selected country
+- **Add Country Page** – Controlled form to add country data (frontend only)
 - **About Page** – Project description, tools used, and contributors
 
 ---
 
 ## 🛠️ Technologies Used
-- React
-- React Router
+- React & React Router
 - JavaScript (ES6+)
 - Fetch API
 - REST Countries Public API
-- Jest
-- React Testing Library
+- Jest & React Testing Library
 - HTML5 & CSS3
 - Git & GitHub
 - Vite
@@ -45,16 +43,22 @@ This project was developed as part of a summative lab assessment and focuses str
 ## 🔁 State Management & Hooks
 - React hooks: `useState`, `useEffect`
 - Custom hook: `useFetchCountries`
-- Local component state for form handling and UI updates
+- Local state for form handling and UI updates
 
 ---
 
 ## 🌐 API Usage
-This project uses the REST Countries public API to retrieve country data. All data fetching is handled entirely on the client side.
+This project uses the REST Countries public API to retrieve country data. All fetching is client-side.
 
-Example endpoint:
+**API Links**
 ```
-https://restcountries.com/v3.1/all
+All countries: https://restcountries.com/v3.1/all
+Africa: https://restcountries.com/v3.1/region/africa
+Americas: https://restcountries.com/v3.1/region/americas
+Asia: https://restcountries.com/v3.1/region/asia
+Europe: https://restcountries.com/v3.1/region/europe
+Oceania: https://restcountries.com/v3.1/region/oceania
+Antarctic: https://restcountries.com/v3.1/region/antarctic
 ```
 
 ---
@@ -128,7 +132,7 @@ npm install
 npm run dev
 ```
 
-The application will be available at:
+Visit:
 ```
 http://localhost:5173
 ```
@@ -136,14 +140,10 @@ http://localhost:5173
 ---
 
 ## 🧪 Testing
-This project uses Jest and React Testing Library.
-
-Run tests:
 ```bash
 npm test
 ```
-
-Tests cover:
+Covers:
 - Page rendering
 - Search functionality
 - Routing behavior
@@ -151,138 +151,231 @@ Tests cover:
 
 ---
 
-## 👥 Team Responsibilities & Git Workflow
+## 👥 Team Responsibilities & Branch Workflow
+
+> ⚠️ Rules
+> - Work only on your assigned files
+> - Do NOT push directly to `main`
+> - Pull latest changes before starting
+> - Merge to `main` only after completing your task
+
+---
 
 ### 👤 Abdirahman — Project Owner & Core Setup
-
 **Responsibilities**
-- Set up application routing
-- Build About page
-- Build Add Country page
-- Integrate all application pages
-- Final testing and bug fixes
+1. Application routing
+2. Shared fetching logic (`useFetchCountries.js`)
+3. Core layout & global styling
+4. About & Add Country pages
+5. Navbar and navigation
+6. Final integration, testing, bug fixes
 
-**Files**
-```bash
-src/
-├── pages/
-│   ├── About.jsx
-│   ├── AddCountry.jsx
-│
-├── hooks/
-│   └── useFetchCountries.js
-│
-├── components/
-│   ├── Navbar.jsx
-│   └── Navbar.css
-│
-├── App.jsx
-├── App.css
-├── main.jsx
-├── index.css
-```
+**Assigned Files**
+- src/pages/About.jsx
+- src/pages/AddCountry.jsx
+- src/hooks/useFetchCountries.js
+- src/components/Navbar.jsx
+- src/components/Navbar.css
+- src/App.jsx
+- src/App.css
+- src/main.jsx
+- src/index.css
+- src/assets/react.svg
 
-**Branch**
+**Branch & Workflow**
 ```bash
-feature/about-addcountry-core
+1. Switch to branch
+git switch feature/about-addcountry-core
+
+2. Pull latest changes
+git pull origin feature/about-addcountry-core
+
+3. Make changes
+# Edit About, AddCountry, Navbar, fetching logic
+
+4. Stage changes
+git add src/pages/About.jsx src/pages/AddCountry.jsx src/hooks/useFetchCountries.js \
+src/components/Navbar.jsx src/components/Navbar.css src/App.jsx src/App.css \
+src/main.jsx src/index.css src/assets/react.svg
+
+5. Commit changes
+git commit -m "Set up core routing, fetching logic, About and Add Country pages"
+
+6. Switch to main
+git switch main
+
+7. Pull latest main
+git pull origin main
+
+8. Merge branch
+git merge feature/about-addcountry-core
+
+9. Push to GitHub
+git push origin main
 ```
 
 ---
 
 ### 👤 Amon — Home Page
-
 **Responsibilities**
-- Display all countries
-- Implement search functionality
-- Filter countries by name
-- Use existing components only
+1. Display all countries
+2. Implement search functionality
+3. Filter countries by name
+4. Use existing components only
 
-**Files**
-```bash
-src/
-├── pages/
-│   ├── Home.jsx
-│   └── Home.css
-│
-├── tests/
-│   ├── Home.test.jsx
-│   └── Search.test.jsx
-```
+**Assigned Files**
+- src/pages/Home.jsx
+- src/pages/Home.css
+- src/components/CountryCard.jsx
+- src/components/CountryCard.css
+- src/components/SearchBar.jsx
+- src/components/SearchBar.css
+- src/tests/Home.test.jsx
+- src/tests/Search.test.jsx
 
-**Branch**
+**Branch & Workflow**
 ```bash
-feature/home-page
+1. Switch to branch
+git switch feature/home-page
+
+2. Pull latest changes
+git pull origin feature/home-page
+
+3. Make changes
+# Edit Home page, CountryCard, SearchBar, tests
+
+4. Stage changes
+git add src/pages/Home.jsx src/pages/Home.css src/components/CountryCard.jsx \
+src/components/CountryCard.css src/components/SearchBar.jsx src/components/SearchBar.css \
+src/tests/Home.test.jsx src/tests/Search.test.jsx
+
+5. Commit changes
+git commit -m "Implement Home page with country list and search"
+
+6. Switch to main
+git switch main
+
+7. Pull latest main
+git pull origin main
+
+8. Merge branch
+git merge feature/home-page
+
+9. Push to GitHub
+git push origin main
 ```
 
 ---
 
-### 👤 Alvin — Dashboard (Regions Page)
-
+### 👤 Alvins — Dashboard (Regions Page)
 **Responsibilities**
-- Display countries by region
-- Build region summary cards
-- Use region-based API data
+1. Display countries by region
+2. Build region summary cards
+3. Use region-based API data
 
-**Files**
-```bash
-src/
-├── pages/
-│   └── Dashboard.jsx
-│
-├── components/
-│   ├── RegionCard.jsx
-│   └── RegionCard.css
-```
+**Assigned Files**
+- src/pages/Dashboard.jsx
+- src/components/RegionCard.jsx
+- src/components/RegionCard.css
 
-**Branch**
+**Branch & Workflow**
 ```bash
-feature/dashboard-page
+1. Create and switch branch
+git checkout -b feature/dashboard-page
+
+2. Push branch to remote
+git push -u origin feature/dashboard-page
+
+3. Pull latest changes
+git pull origin feature/dashboard-page
+
+4. Make changes
+# Edit Dashboard page and Region cards
+
+5. Stage changes
+git add src/pages/Dashboard.jsx src/components/RegionCard.jsx src/components/RegionCard.css
+
+6. Commit changes
+git commit -m "Add dashboard page with region cards"
+
+7. Switch to main
+git switch main
+
+8. Pull latest main
+git pull origin main
+
+9. Merge branch
+git merge feature/dashboard-page
+
+10. Push to GitHub
+git push origin main
 ```
 
 ---
 
 ### 👤 Abdulhadi — Country Details Page
-
 **Responsibilities**
-- Display detailed country information
-- Read route parameters
-- Implement routing tests
+1. Display detailed country information
+2. Read route parameters
+3. Implement routing tests
 
-**Files**
-```bash
-src/
-├── pages/
-│   └── CountryDetails.jsx
-│
-├── tests/
-│   ├── CountryDetails.test.jsx
-│   └── Routing.test.jsx
-```
+**Assigned Files**
+- src/pages/CountryDetails.jsx
+- src/tests/CountryDetails.test.jsx
+- src/tests/Routing.test.jsx
 
-**Branch**
+**Branch & Workflow**
 ```bash
-feature/country-details
+1. Create and switch branch
+git checkout -b feature/country-details
+
+2. Push branch to remote
+git push -u origin feature/country-details
+
+3. Pull latest changes
+git pull origin feature/country-details
+
+4. Make changes
+# Edit CountryDetails page and routing tests
+
+5. Stage changes
+git add src/pages/CountryDetails.jsx src/tests/CountryDetails.test.jsx src/tests/Routing.test.jsx
+
+6. Commit changes
+git commit -m "Implement country details page and routing tests"
+
+7. Switch to main
+git switch main
+
+8. Pull latest main
+git pull origin main
+
+9. Merge branch
+git merge feature/country-details
+
+10. Push to GitHub
+git push origin main
 ```
 
 ---
 
 ## 🚫 Contribution Rules
-- Do NOT edit files outside your assignment
+- Work only on assigned files
 - Do NOT push directly to `main`
-- Always work in your assigned branch
-- Always pull the latest changes before starting work
+- Pull latest changes before starting
+- Merge to `main` only after completing your work
 
 ---
 
 ## 👥 Contributors
-| Name | GitHub Username |
-|------|---------------|
+| Name | GitHub |
+|------|--------|
 | Abdirahman Cabdi | https://github.com/AbdiCHAN |
-| Alvin Wanjohi | https://github.com/wanjohialvins |
+| Alvins Wanjohi | https://github.com/wanjohialvins |
 | Amon Ogino | https://github.com/amon-sudo |
 | Abdulhadi Mohamed | https://github.com/abdulhadishueb |
 
 ---
 
 ## 📌 License
-This project was created for educational purposes as part of a summative assessment.
+Educational purposes – summative lab assessment
