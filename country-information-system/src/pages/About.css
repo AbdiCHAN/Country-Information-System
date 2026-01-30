@@ -1,0 +1,11 @@
+import React from "react";
+import "./About.css";
+
+export default function About() {
+  return (
+    <div className="about-container">
+      <h1>About Country Information System</h1>
+      <p>This application allows users to explore countries using the REST Countries API.</p>
+    </div>
+  );
+}

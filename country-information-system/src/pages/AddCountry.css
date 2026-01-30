@@ -1,0 +1,11 @@
+import React from "react";
+import "./AddCountry.css"; // Import CSS
+
+export default function AddCountry() {
+  return (
+    <div className="add-country-container">
+      <h1>Add Country Page</h1>
+      <p>Use this page to add new country information.</p>
+    </div>
+  );
+}
