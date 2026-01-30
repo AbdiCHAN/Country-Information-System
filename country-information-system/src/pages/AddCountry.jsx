@@ -1,9 +1,8 @@
-import React from "react";
-// src/pages/AddCountry.jsx
 import { useState } from "react";
+import "./AddCountry.css";
 
 export default function AddCountry() {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     capital: "",
     region: "",
@@ -11,85 +10,66 @@ export default function AddCountry() {
     flag: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Country added:", formData);
-    alert("Country added successfully!");
-    setFormData({ name: "", capital: "", region: "", population: "", flag: "" });
-  };
 
-  const handleClear = () => {
-    setFormData({ name: "", capital: "", region: "", population: "", flag: "" });
+    if (!form.name || !form.capital || !form.region) {
+      alert("Please fill in all required fields");
+      return;
+    }
+
+    alert("Country successfully added (demo only)");
+    setForm({ name: "", capital: "", region: "", population: "", flag: "" });
   };
 
   return (
-    <div className="add-country-container">
+    <section className="add-country-page">
       <h1>Add New Country</h1>
-      <p>Fill in the details below to add a new country to the Stitch global database.</p>
+      <p>Fill in the details below to add a new country.</p>
 
-      <form onSubmit={handleSubmit} className="add-country-form">
-        <div className="form-row">
-          <input
-            type="text"
-            name="name"
-            placeholder="Country Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="text"
-            name="capital"
-            placeholder="Capital City"
-            value={formData.capital}
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <form className="country-form" onSubmit={handleSubmit}>
+        <input
+          name="name"
+          placeholder="Country Name"
+          value={form.name}
+          onChange={handleChange}
+        />
+        <input
+          name="capital"
+          placeholder="Capital City"
+          value={form.capital}
+          onChange={handleChange}
+        />
 
-        <div className="form-row">
-          <select name="region" value={formData.region} onChange={handleChange} required>
-            <option value="">Select a region</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-          </select>
-          <input
-            type="number"
-            name="population"
-            placeholder="Population"
-            value={formData.population}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <select name="region" value={form.region} onChange={handleChange}>
+          <option value="">Select Region</option>
+          <option>Africa</option>
+          <option>Americas</option>
+          <option>Asia</option>
+          <option>Europe</option>
+          <option>Oceania</option>
+          <option>Antarctic</option>
+        </select>
 
-        <div className="form-row">
-          <input
-            type="text"
-            name="flag"
-            placeholder="Flag Image URL"
-            value={formData.flag}
-            onChange={handleChange}
-          />
-        </div>
+        <input
+          name="population"
+          placeholder="Population"
+          value={form.population}
+          onChange={handleChange}
+        />
 
-        <div className="form-actions">
-          <button type="button" onClick={handleClear}>Clear Form</button>
-          <button type="submit">Add Country</button>
-        </div>
+        <input
+          name="flag"
+          placeholder="Flag Image URL"
+          value={form.flag}
+          onChange={handleChange}
+        />
+
+        <button type="submit">Add Country</button>
       </form>
-
-      <div className="pro-tip">
-        <strong>Pro Tip:</strong> Once added, you can click on the country card in the main dashboard to edit advanced data.
-      </div>
-    </div>
+    </section>
   );
 }

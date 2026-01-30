@@ -1,11 +1,48 @@
-import React from "react";
-import "./About.css";
+.about-page {
+  padding: 60px;
+}
 
-export default function About() {
-  return (
-    <div className="about-container">
-      <h1>About Country Information System</h1>
-      <p>This application allows users to explore countries using the REST Countries API.</p>
-    </div>
-  );
+.about-header h1 {
+  font-size: 36px;
+}
+
+.about-header span {
+  color: #2563eb;
+}
+
+.about-header p {
+  max-width: 700px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.mission-card {
+  margin-top: 40px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card ul {
+  margin-top: 15px;
+}
+
+.tech-stack {
+  margin-top: 60px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tech-grid div {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }

@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.navbar-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.navbar-nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.navbar-nav a.active {
+  color: #2563eb;
+}
+
+.navbar-auth {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}

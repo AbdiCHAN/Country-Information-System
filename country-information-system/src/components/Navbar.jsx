@@ -1,13 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 export default function Navbar() {
   return (
-    <nav style={{ padding: "1rem", backgroundColor: "#f0f0f0" }}>
-      <Link to="/" style={{ marginRight: "1rem" }}>Home</Link>
-      <Link to="/about" style={{ marginRight: "1rem" }}>About</Link>
-      <Link to="/add-country" style={{ marginRight: "1rem" }}>Add Country</Link>
-      <Link to="/dashboard">Dashboard</Link>
-    </nav>
+    <header className="navbar">
+      
+      <nav className="navbar-nav">
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/add-country">Add Country</NavLink>
+        <NavLink to="/country-details">Country Details</NavLink>
+        <NavLink to="/about">About</NavLink>
+      </nav>
+
+      <button className="navbar-auth">Sign In</button>
+    </header>
   );
 }
