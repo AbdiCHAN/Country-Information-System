@@ -1,70 +1,105 @@
 .about-page {
   min-height: 100vh;
-  padding: 60px 20px;
+  padding: 80px 20px;
   background: linear-gradient(135deg, #f8fafc, #eef2ff);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-family: 'Inter', sans-serif;
 }
 
-.about-page h1 {
-  font-size: 32px;
+.about-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
   margin-bottom: 16px;
-  color: #1e293b;
 }
 
-.about-page p {
-  max-width: 700px;
-  color: #475569;
-  font-size: 16px;
+.about-header h1 span {
+  color: #2563eb; /* Blue highlight like in screenshot */
+}
+
+.about-header p {
+  max-width: 720px;
+  color: #4b5563;
+  font-size: 17px;
   line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* Mission Card */
+.mission-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 750px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.mission-card h2 {
+  font-size: 22px;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.mission-card p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.7;
   margin-bottom: 20px;
 }
 
-.about-page .team-section {
-  margin-top: 40px;
+.mission-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mission-card ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.mission-card ul li::before {
+  content: "✔ ";
+  color: #16a34a; /* green checkmark */
+}
+
+/* Tech Stack Section */
+.tech-stack {
+  max-width: 800px;
   width: 100%;
-  max-width: 900px;
+  margin-top: 40px;
+}
+
+.tech-stack h2 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }
 
-.about-page .team-member {
+.tech-grid div {
   background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
+  padding: 15px;
+  border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  color: #1e293b;
+  font-weight: 500;
   transition: transform 0.3s, box-shadow 0.3s;
-  animation: fadeSlideIn 0.6s ease-out;
 }
 
-.about-page .team-member:hover {
+.tech-grid div:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.about-page .team-member h3 {
-  margin-bottom: 6px;
-  color: #0f172a;
-}
-
-.about-page .team-member p {
-  margin: 0;
-  color: #334155;
-  font-size: 14px;
-}
-
-/* Links in About page */
-.about-page a {
-  color: #2563eb;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.about-page a:hover {
-  color: #1e40af;
 }
 
 /* Fade-slide animation */
