@@ -44,3 +44,17 @@ button:hover{
 .Homee h1{
     padding: 1rem;
 }
+.regions{
+    margin: 7rem;
+    padding: 1rem;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.loading{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20%;
+
+}

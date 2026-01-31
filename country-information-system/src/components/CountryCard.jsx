@@ -28,9 +28,9 @@ function Featured({ countries = [], search = "" }) {
                 <img src={country.flag} alt={`${country.name} flag`} />
                 <div className={styles.lower}>
                   <h3>{country.name}</h3>
-                  <p>Capital: {country.capital}</p>
-                  <p>Population: {country.population.toLocaleString()}</p>
-                  <p>Language: {country.language || "N/A"}</p>
+                  <p>Capital: <b> {country.capital}</b></p>
+                  <p>Population: <b>{country.population.toLocaleString()}</b></p>
+                  <p>Language: <b>{country.language || "kikuyu"}</b></p>
                 </div>
               </Link>
             ))

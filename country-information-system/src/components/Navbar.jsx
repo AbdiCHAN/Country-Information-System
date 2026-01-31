@@ -17,9 +17,11 @@ export default function Navbar() {
         </NavLink>
         <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : ""}>
           About
+           
         </NavLink>
+        <button className={styles.sign}>Sign In</button>
       </nav>
-      <button className={styles.sign}>Sign In</button>
+     
     </header>
   );
 }

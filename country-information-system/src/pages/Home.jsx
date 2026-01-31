@@ -62,8 +62,7 @@ export default function Home() {
         <div className={styles.countries}>
           {filteredCountries.map(country => (
             <CountryCard
-              key={country.code}
-              country={country}
+             countries={filteredCountries} search={search}
             />
           ))}
         </div>
