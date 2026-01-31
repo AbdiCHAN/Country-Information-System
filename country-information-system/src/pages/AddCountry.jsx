@@ -10,12 +10,14 @@ export default function AddCountry() {
     flag: "",
   });
 
-  // State to store the list of added countries
   const [countries, setCountries] = useState([]);
+  const [editingIndex, setEditingIndex] = useState(null);
 
+  // Handle input changes
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
+  // Handle form submit for create or update
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -24,17 +26,38 @@ export default function AddCountry() {
       return;
     }
 
-    // Add the new country to the list
-    setCountries([...countries, form]);
+    if (editingIndex !== null) {
+      // Update existing country
+      const updated = [...countries];
+      updated[editingIndex] = form;
+      setCountries(updated);
+      setEditingIndex(null);
+    } else {
+      // Add new country
+      setCountries([...countries, form]);
+    }
 
-    // Clear the form
+    // Clear form
     setForm({ name: "", capital: "", region: "", population: "", flag: "" });
+  };
+
+  // Handle delete
+  const handleDelete = (index) => {
+    if (window.confirm("Are you sure you want to delete this country?")) {
+      setCountries(countries.filter((_, i) => i !== index));
+    }
+  };
+
+  // Handle edit
+  const handleEdit = (index) => {
+    setForm(countries[index]);
+    setEditingIndex(index);
   };
 
   return (
     <section className="add-country-page">
-      <h1>Add New Country</h1>
-      <p>Fill in the details below to add a new country.</p>
+      <h1>{editingIndex !== null ? "Edit Country" : "Add New Country"}</h1>
+      <p>Fill in the details below to {editingIndex !== null ? "update" : "add"} a country.</p>
 
       <form className="country-form" onSubmit={handleSubmit}>
         <input
@@ -74,13 +97,14 @@ export default function AddCountry() {
           onChange={handleChange}
         />
 
-        <button type="submit">Add Country</button>
+        <button type="submit">
+          {editingIndex !== null ? "Update Country" : "Add Country"}
+        </button>
       </form>
 
-      {/* Display added countries */}
       {countries.length > 0 && (
         <div className="added-countries">
-          <h2>Added Countries</h2>
+          <h2>Countries List</h2>
           {countries.map((country, index) => (
             <div key={index} className="country-card">
               <h3>{country.name}</h3>
@@ -101,6 +125,11 @@ export default function AddCountry() {
                   style={{ border: "1px solid #ccc" }}
                 />
               )}
+
+              <div className="country-actions">
+                <button onClick={() => handleEdit(index)}>Edit</button>
+                <button onClick={() => handleDelete(index)}>Delete</button>
+              </div>
             </div>
           ))}
         </div>
