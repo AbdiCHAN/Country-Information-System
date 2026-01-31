@@ -1,0 +1,99 @@
+*{
+  border: none;
+}
+
+.top{
+  margin: 2rem 7rem;
+  font-family: sans-serif;
+  background-color: aliceblue;
+  padding: 12px;
+  border-radius: 12px;
+}
+.ficha {
+margin-left: 7rem;
+margin-right: 7rem;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+overflow: hidden;
+font-family: "Inter", sans-serif;
+transition: transform 0.3s;
+gap: 10px;
+}
+
+.Cardss {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.Cardss:hover {
+  transform: translateX(5px);
+}
+.cont{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: 100vh;
+   
+}
+
+ .seeMore{
+  color:blue;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+   background-image: url("https://images.pexels.com/photos/8828605/pexels-photo-8828605.jpeg");
+   background-size: cover;
+   background-position: center;
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  background-color: white;
+  transition: transform 0.2s;
+
+
+ }
+
+
+ img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: block;
+
+ }
+ .lower{
+    padding: 1rem;
+ }
+.pp{
+   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+    font-weight: bold;
+  text-decoration: none;
+
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+ background-color: white;
+  transition: transform 0.2s;
+
+}
