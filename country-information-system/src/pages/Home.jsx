@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Home.module.css"
 import SearchBar from "../components/SearchBar";
-import Featured from "../components/Featured";
+import CountryCard from "../components/CountryCard"
 import Footer from "../components/Footer";
 
 
@@ -22,7 +22,7 @@ export default function Home({}) {
   
     </div>
     <SearchBar onSearch={setSearch} />
-    <Featured search={search} />
+    <CountryCard search={search} />
 
 
 
