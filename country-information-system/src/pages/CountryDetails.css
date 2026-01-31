@@ -1,0 +1,11 @@
+.details {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.details img {
+  width: 100%;
+  border-radius: var(--radius);
+}

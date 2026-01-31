@@ -1,40 +1,36 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-const ENDPOINTS = {
-  all: "https://restcountries.com/v3.1/all",
-  africa: "https://restcountries.com/v3.1/region/africa",
-  americas: "https://restcountries.com/v3.1/region/americas",
-  asia: "https://restcountries.com/v3.1/region/asia",
-  europe: "https://restcountries.com/v3.1/region/europe",
-  oceania: "https://restcountries.com/v3.1/region/oceania",
-  antarctic: "https://restcountries.com/v3.1/region/antarctic",
-};
-
-export default function useFetchCountries(region = "all") {
-  const [data, setData] = useState([]);
+export default function useFetchCountries() {
+  const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = ENDPOINTS[region];
+    const fetchCountries = async () => {
+      try {
+        const res = await fetch("https://restcountries.com/v3.1/all");
+        if (!res.ok) throw new Error("Failed to fetch countries");
+        const data = await res.json();
 
-    if (!url) {
-      setError("Invalid region");
-      setLoading(false);
-      return;
-    }
+        const formatted = data.map(c => ({
+          name: c.name.common,
+          code: c.cca3,
+          capital: c.capital ? c.capital[0] : "N/A",
+          region: c.region,
+          population: c.population,
+          flag: c.flags.svg
+        }));
 
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to fetch country data");
-        }
-        return res.json();
-      })
-      .then((json) => setData(json))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [region]);
+        setCountries(formatted);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  return { data, loading, error };
+    fetchCountries();
+  }, []);
+
+  return { countries, loading, error };
 }
