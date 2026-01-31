@@ -43,13 +43,16 @@ gap: 10px;
 }
 
  .seeMore{
+  color:blue;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding: 1rem;
   font-weight: bold;
   text-decoration: none;
-
+   background-image: url("https://images.pexels.com/photos/8828605/pexels-photo-8828605.jpeg");
+   background-size: cover;
+   background-position: center;
   text-align: center;
   align-items: center;
   text-align: center;
@@ -90,7 +93,7 @@ gap: 10px;
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  background-color: white;
+ background-color: white;
   transition: transform 0.2s;
 
 }
