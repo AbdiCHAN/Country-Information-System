@@ -1,19 +1,14 @@
-.search{
+.search {
     display: flex;
     background-color: aliceblue;
-    border: none;
-    box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin-top:3rem;
-    margin-left: 7rem;
-    margin-right: 7rem;
+    margin: 3rem 7rem 0 7rem;
     padding: 10px;
-    
-
-
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    align-items: center;
 }
 
-.search input{
+.search input {
     border: none;
     outline: none;
     font-size: 16px;
@@ -21,15 +16,15 @@
     color: black;
     flex: 1;
 }
+
 .search input::placeholder {
-  color: gray;        
-  opacity: 1;
+    color: gray;
+    opacity: 1;
 }
 
 .icon {
-  color: gray;         
-  margin-left: 10px;
-  margin-right: 10px;      
-  cursor: pointer;        
-  font-size: 25px;        
+    color: gray;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 25px;
 }
