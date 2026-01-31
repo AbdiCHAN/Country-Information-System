@@ -1,22 +1,28 @@
-import { useParams } from "react-router-dom";
-import useFetchCountries from "../hooks/useFetchCountries";
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import useFetchCountryByCode from "../hooks/useFetchCountryByCode";
 import "./CountryDetails.css";
 
 export default function CountryDetails() {
   const { code } = useParams();
-  const { countries } = useFetchCountries();
+  const { country, loading, error } = useFetchCountryByCode(code);
 
-  const country = countries.find(c => c.code === code);
-  if (!country) return null;
+  if (loading) return <p className="loading">Loading country details...</p>;
+  if (error) return <p className="error">{error}</p>;
+  if (!country) return <p className="error">Country not found</p>;
 
   return (
-    <div className="details">
-      <img src={country.flag} alt={country.name} />
-      <div>
-        <h1>{country.name}</h1>
-        <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
-        <p><strong>Region:</strong> {country.region}</p>
-        <p><strong>Capital:</strong> {country.capital}</p>
+    <div className="country-details-page">
+      <Link to="/" className="back-link">← Back to Home</Link>
+
+      <div className="country-details-card">
+        <img src={country.flag} alt={`${country.name} flag`} className="country-flag" />
+        <div className="country-info">
+          <h1>{country.name}</h1>
+          <p><strong>Capital:</strong> {country.capital}</p>
+          <p><strong>Region:</strong> {country.region}</p>
+          <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
+        </div>
       </div>
     </div>
   );

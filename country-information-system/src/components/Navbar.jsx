@@ -9,7 +9,6 @@ export default function Navbar() {
         <NavLink to="/" end>Home</NavLink>
         <NavLink to="/dashboard">Dashboard</NavLink>
         <NavLink to="/add-country">Add Country</NavLink>
-        <NavLink to="/country-details">Country Details</NavLink>
         <NavLink to="/about">About</NavLink>
       </nav>
 

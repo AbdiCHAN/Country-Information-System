@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./CountryCard.css";
 
@@ -7,11 +8,11 @@ export default function CountryCard({ country, loading }) {
   return (
     <Link to={`/country/${country.code}`} className="country-card">
       <img src={country.flag} alt={`${country.name} flag`} />
-      <div className="country-info">
+      <div>
         <h3>{country.name}</h3>
-        <p>Capital: {country.capital}</p>
-        <p>Region: {country.region}</p>
-        <p>Population: {country.population.toLocaleString()}</p>
+        <p><strong>Capital:</strong> {country.capital}</p>
+        <p><strong>Region:</strong> {country.region}</p>
+        <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
       </div>
     </Link>
   );
