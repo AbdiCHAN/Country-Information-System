@@ -1,0 +1,109 @@
+.about-page {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.about-header h1 span {
+  color: #2563eb; /* Blue highlight like in screenshot */
+}
+
+.about-header p {
+  max-width: 720px;
+  color: #4b5563;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* Mission Card */
+.mission-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 750px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.mission-card h2 {
+  font-size: 22px;
+  color: #111827;
+  margin-bottom: 15px;
+}
+
+.mission-card p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.mission-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mission-card ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.mission-card ul li::before {
+  content: "✔ ";
+  color: #16a34a; /* green checkmark */
+}
+
+/* Tech Stack Section */
+.tech-stack {
+  max-width: 800px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.tech-stack h2 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.tech-grid div {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  color: #1e293b;
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-grid div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Fade-slide animation */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

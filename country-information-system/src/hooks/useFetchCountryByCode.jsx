@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react";
 
-export default function useFetchCountries() {
-  const [countries, setCountries] = useState([]);
+export default function useFetchCountryByCode(code) {
+  const [country, setCountry] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchCountries = async () => {
+    if (!code) return;
+
+    const fetchCountry = async () => {
       try {
         const fields = ["name","cca3","capital","region","population","flags"].join(",");
-        const res = await fetch(`https://restcountries.com/v3.1/all?fields=${fields}`);
-        if (!res.ok) throw new Error("Failed to fetch countries");
-        const data = await res.json();
+        const res = await fetch(`https://restcountries.com/v3.1/alpha/${code}?fields=${fields}`);
+        if (!res.ok) throw new Error(`Failed to fetch country: ${res.status}`);
 
-        const formatted = data.map(c => ({
+        const data = await res.json();
+        const c = Array.isArray(data) ? data[0] : data;
+
+        const formatted = {
           name: c.name.common,
           code: c.cca3,
           capital: c.capital ? c.capital[0] : "N/A",
           region: c.region,
           population: c.population,
           flag: c.flags.svg
-        }));
+        };
 
-        setCountries(formatted);
+        setCountry(formatted);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -30,8 +34,8 @@ export default function useFetchCountries() {
       }
     };
 
-    fetchCountries();
-  }, []);
+    fetchCountry();
+  }, [code]);
 
-  return { countries, loading, error };
+  return { country, loading, error };
 }

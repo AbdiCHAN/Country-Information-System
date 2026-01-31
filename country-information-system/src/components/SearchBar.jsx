@@ -18,7 +18,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className={styles.search}>
-        <FontAwesomeIcon
+      <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className={styles.icon}
         onClick={handleSearch}
@@ -30,7 +30,6 @@ function SearchBar({ onSearch }) {
         onChange={(e) => setSearch(e.target.value)}
         onKeyDown={handleKeyPress}
       />
-      
     </div>
   );
 }

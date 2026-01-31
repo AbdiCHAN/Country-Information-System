@@ -1,15 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css"
+import { NavLink } from "react-router-dom";
+import styles from "./Navbar.module.css"; // your CSS module
 
 export default function Navbar() {
   return (
-    <nav className={styles.navii}>
-      <Link to="/" >Home</Link>
-       <Link to="/dashboard">Dashboard</Link>
-      <Link to="/add-country" >Add Country</Link>
-      <Link to="/about" >About</Link>
+    <header className={styles.navbarContainer}>
+      <nav className={styles.navii}>
+        <NavLink to="/" end className={({ isActive }) => isActive ? styles.active : ""}>
+          Home
+        </NavLink>
+        <NavLink to="/dashboard" className={({ isActive }) => isActive ? styles.active : ""}>
+          Dashboard
+        </NavLink>
+        <NavLink to="/add-country" className={({ isActive }) => isActive ? styles.active : ""}>
+          Add Country
+        </NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : ""}>
+          About
+        </NavLink>
+      </nav>
       <button className={styles.sign}>Sign In</button>
-    </nav>
+    </header>
   );
 }
