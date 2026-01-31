@@ -32,6 +32,8 @@
   width: 100%;
   gap: 20px;
   animation: fadeSlideIn 0.6s ease-out;
+  border: 1px solid #e2e8f0;
+
 }
 
 .country-flag {
@@ -86,3 +88,4 @@
     transform: translateY(0);
   }
 }
+

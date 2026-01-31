@@ -317,6 +317,4 @@ git push origin main
 ---
 
 ## 📌 License
-
 Educational project — Summative assessment
-

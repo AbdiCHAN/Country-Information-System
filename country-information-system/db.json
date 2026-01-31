@@ -1,3 +1,44 @@
 {
-  "countries": []
+  "countries": [
+    {
+      "id": 1,
+      "name": "Kenya",
+      "capital": "Nairobi",
+      "region": "Africa",
+      "population": 53771296,
+      "flag": "https://restcountries.com/data/ken.svg"
+    },
+    {
+      "id": 2,
+      "name": "Nigeria",
+      "capital": "Abuja",
+      "region": "Africa",
+      "population": 211400708,
+      "flag": "https://restcountries.com/data/nga.svg"
+    },
+    {
+      "id": 3,
+      "name": "Japan",
+      "capital": "Tokyo",
+      "region": "Asia",
+      "population": 125960000,
+      "flag": "https://restcountries.com/data/jpn.svg"
+    },
+    {
+      "id": 4,
+      "name": "Germany",
+      "capital": "Berlin",
+      "region": "Europe",
+      "population": 83240525,
+      "flag": "https://restcountries.com/data/deu.svg"
+    },
+    {
+      "id": 5,
+      "name": "Brazil",
+      "capital": "Brasília",
+      "region": "Americas",
+      "population": 213993437,
+      "flag": "https://restcountries.com/data/bra.svg"
+    }
+  ]
 }

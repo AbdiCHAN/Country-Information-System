@@ -14,6 +14,7 @@ export default function CountryDetails() {
   return (
     <div className="country-details-page">
       <Link to="/" className="back-link">← Back to Home</Link>
+      {/* Country details fetched using ISO country code */}
 
       <div className="country-details-card">
         <img src={country.flag} alt={`${country.name} flag`} className="country-flag" />
