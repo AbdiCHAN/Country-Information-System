@@ -11,7 +11,6 @@ This project was developed as part of a summative lab assessment and focuses str
 - Search countries by name with real-time filtering
 - Display country flag, name, and capital
 - Detailed country information page
-- Region-based filtering (Africa, Europe, Asia, etc.)
 - Responsive design (mobile & desktop)
 - Loading and error states
 - Component and routing tests
