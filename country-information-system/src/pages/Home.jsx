@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Home.module.css";
+import "./Home.css"; // plain CSS import
 
 import SearchBar from "../components/SearchBar";
 import CountryCard from "../components/CountryCard";
@@ -12,64 +12,56 @@ export default function Home() {
   const { countries, loading, error } = useFetchCountries();
   const [search, setSearch] = useState("");
 
-  const filteredCountries = countries.filter(c =>
+  // Filter countries by search term
+  const filteredCountries = countries.filter((c) =>
     c.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  const regions = [...new Set(countries.map(c => c.region))]
+  // Create regions with counts
+  const regions = [...new Set(countries.map((c) => c.region))]
     .filter(Boolean)
-    .map(region => ({
+    .map((region) => ({
       region,
-      count: countries.filter(c => c.region === region).length
+      count: countries.filter((c) => c.region === region).length,
     }));
 
   return (
     <>
-      {/* HERO SECTION (YOUR UI) */}
-      <div className={styles.Homee}>
-        <h1>Welcome to Aloo World Viewer</h1>
+      {/* HERO SECTION */}
+      <div className="Homee">
+        <h1>Welcome to World Viewer</h1>
         <p>
-          explore where you will never visit <br />
-          i doubt you did geography
+          Explore the statistics of countries around the World <br />
         </p>
 
-        <div className={styles.pri}>
+        <div className="pri">
           <button>Get Started</button>
           <button>Learn here</button>
         </div>
       </div>
 
       {/* SEARCH */}
+      {/* Minor adjustment: SearchBar now fully supports Enter and click */}
       <SearchBar onSearch={setSearch} />
 
       {/* REGIONS */}
-      <div className={styles.regions}>
-        {regions.map(r => (
-          <RegionCard
-            key={r.region}
-            region={r.region}
-            count={r.count}
-          />
+      <div className="regions">
+        {regions.map((r) => (
+          <RegionCard key={r.region} region={r.region} count={r.count} />
         ))}
       </div>
 
       {/* STATES */}
-      {loading && <p className={styles.loading}>Loading countries...</p>}
-      {error && <p className={styles.error}>{error}</p>}
+      {loading && <p className="loading">Loading countries...</p>}
+      {error && <p className="error">{error}</p>}
 
       {/* COUNTRIES */}
       {!loading && !error && filteredCountries.length > 0 && (
-        <div className={styles.countries}>
-          {filteredCountries.map(country => (
-            <CountryCard
-             countries={filteredCountries} search={search}
-            />
-          ))}
-        </div>
+        <CountryCard countries={filteredCountries} search={search} />
       )}
 
       {!loading && !error && filteredCountries.length === 0 && (
-        <p className={styles.noResults}>No countries found.</p>
+        <p className="noResults">No countries found.</p>
       )}
 
       <Footer />

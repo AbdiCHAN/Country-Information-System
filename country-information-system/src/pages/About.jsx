@@ -1,27 +1,22 @@
 import "./About.css";
 
-// src/pages/About.jsx
 export default function About() {
   return (
     <section className="about-page">
-      {/* Your original About content */}
-      <div className="about-container">
-        <h1>About Stitch</h1>
+      <header className="about-header">
+        <h1>
+          About the <span>Country Information System</span> Project
+        </h1>
         <p>
-          Stitch is a Country Information System that lets you view, add, and manage country data.
-          You can explore countries by region, see detailed statistics, and contribute new entries.
+         This is country information system which allows users to explore detailed information about countries worldwide. And it is built using React and the REST Countries API.
         </p>
-        <p>
-          This project is built using React, Vite, and modern frontend practices.
-        </p>
-      </div>
+      </header>
 
-      {/* Additional main branch enhancements */}
       <div className="mission-card">
         <div>
           <h2>Purpose of this System</h2>
           <p>
-            The purpose of this system is to provide users with a comprehensive and user-friendly platform to access accurate and up-to-date information about countries around the globe. It aims to facilitate learning, research, and exploration of global geography and cultures.
+          The purpose of this system is to provide users with a comprehensive and user-friendly platform to access accurate and up-to-date information about countries around the globe. It aims to facilitate learning, research, and exploration of global geography and cultures.
           </p>
         </div>
         <ul>
