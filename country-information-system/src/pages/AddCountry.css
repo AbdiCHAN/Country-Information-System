@@ -53,6 +53,7 @@
   background: #2563eb;
   color: #ffffff;
   border: none;
+  gap: 10px;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
@@ -128,4 +129,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.form-actions button:first-child {
+  margin-right: 16px;
+}
+.country-actions button:first-child{
+  margin-right: 16px;
 }

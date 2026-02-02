@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO SECTION (YOUR UI) */}
+      
       <div className={styles.Homee}>
         <h1>Welcome to Aloo World Viewer</h1>
         <p>
@@ -39,10 +39,10 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SEARCH */}
+      
       <SearchBar onSearch={setSearch} />
 
-      {/* REGIONS */}
+      
       <div className={styles.regions}>
         {regions.map(r => (
           <RegionCard
@@ -53,11 +53,11 @@ export default function Home() {
         ))}
       </div>
 
-      {/* STATES */}
+      
       {loading && <p className={styles.loading}>Loading countries...</p>}
       {error && <p className={styles.error}>{error}</p>}
 
-      {/* COUNTRIES */}
+    
       {!loading && !error && filteredCountries.length > 0 && (
         <div className={styles.countries}>
           {filteredCountries.map(country => (

@@ -19,7 +19,8 @@ export default function useFetchCountries() {
           capital: c.capital ? c.capital[0] : "N/A",
           region: c.region,
           population: c.population,
-          flag: c.flags.svg
+          flag: c.flags.svg,
+          language: c.language
         }));
 
         setCountries(formatted);

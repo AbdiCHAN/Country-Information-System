@@ -10,20 +10,22 @@ export default function useFetchCountryByCode(code) {
 
     const fetchCountry = async () => {
       try {
-        const fields = ["name","cca3","capital","region","population","flags"].join(",");
+        const fields = ["name","cca3","capital","region","population","flags", "language"].join(",");
         const res = await fetch(`https://restcountries.com/v3.1/alpha/${code}?fields=${fields}`);
         if (!res.ok) throw new Error(`Failed to fetch country: ${res.status}`);
 
         const data = await res.json();
+        
         const c = Array.isArray(data) ? data[0] : data;
-
+        
         const formatted = {
           name: c.name.common,
           code: c.cca3,
           capital: c.capital ? c.capital[0] : "N/A",
           region: c.region,
           population: c.population,
-          flag: c.flags.svg
+          flag: c.flags.svg,
+          language: c.language
         };
 
         setCountry(formatted);

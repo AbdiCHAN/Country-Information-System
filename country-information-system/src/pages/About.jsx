@@ -16,7 +16,6 @@ export default function About() {
         </p>
       </div>
 
-      {/* Additional main branch enhancements */}
       <div className="mission-card">
         <div>
           <h2>Purpose of this System</h2>
@@ -24,11 +23,11 @@ export default function About() {
             The purpose of this system is to provide users with a comprehensive and user-friendly platform to access accurate and up-to-date information about countries around the globe. It aims to facilitate learning, research, and exploration of global geography and cultures.
           </p>
         </div>
-        <ul>
-          <li>✔ Transparency First</li>
-          <li>✔ Data Accuracy</li>
-          <li>✔ Universal Accessibility</li>
-        </ul>
+        <ol>
+          <li> Transparency First</li>
+          <li> Data Accuracy</li>
+          <li>Universal Accessibility</li>
+        </ol>
       </div>
 
       <section className="tech-stack">

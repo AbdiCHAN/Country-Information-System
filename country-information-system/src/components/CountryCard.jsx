@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from "./CountryCard.module.css"; // your style
+import styles from "./CountryCard.module.css"; 
 import { Link } from "react-router-dom";
 
 function Featured({ countries = [], search = "" }) {
 
-  // Filter countries by search term
+  
   const filteredCountries = countries.filter(country =>
     country.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -30,7 +30,7 @@ function Featured({ countries = [], search = "" }) {
                   <h3>{country.name}</h3>
                   <p>Capital: <b> {country.capital}</b></p>
                   <p>Population: <b>{country.population.toLocaleString()}</b></p>
-                  <p>Language: <b>{country.language || "kikuyu"}</b></p>
+                  <p>Language: <b>{country.language || "Haijulikani"}</b></p>
                 </div>
               </Link>
             ))
@@ -40,11 +40,7 @@ function Featured({ countries = [], search = "" }) {
             </div>
           )}
 
-          {search === "" && (
-            <Link to="/more" className={styles.seeMore}>
-              Hundreds + More Countries
-            </Link>
-          )}
+       
         </div>
       </div>
     </>
