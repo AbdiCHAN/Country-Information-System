@@ -30,7 +30,7 @@
 
 
 .search-bar:focus-within {
-  border-color: #facc15;
+  border-color: #f0efeb;
   box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.3);
 }
 
