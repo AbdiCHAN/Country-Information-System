@@ -1,46 +1,61 @@
-import React from 'react';
-import styles from "./CountryCard.module.css"; 
+import React from "react";
 import { Link } from "react-router-dom";
+import "./CountryCard.css";
 
 function Featured({ countries = [], search = "" }) {
-
-  
-  const filteredCountries = countries.filter(country =>
+  // Filter countries by search term
+  const filteredCountries = countries.filter((country) =>
     country.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <>
-      <div className={styles.top}>
+      <div className="top">
         <h2>Countries</h2>
         <p>Discover some elegant countries like Kenya</p>
       </div>
 
-      <div className={styles.ficha}>
-        <div className={styles.cont}>
+      <div className="ficha">
+        <div className="cont">
           {filteredCountries.length > 0 ? (
             filteredCountries.map((country, id) => (
               <Link
                 to={`/country/${country.code}`}
                 key={id}
-                className={styles.Cardss}
+                className="Cardss"
               >
                 <img src={country.flag} alt={`${country.name} flag`} />
-                <div className={styles.lower}>
+
+                <div className="lower">
                   <h3>{country.name}</h3>
-                  <p>Capital: <b> {country.capital}</b></p>
-                  <p>Population: <b>{country.population.toLocaleString()}</b></p>
-                  <p>Language: <b>{country.language || "Haijulikani"}</b></p>
+
+                  <p>
+                    Capital: <b>{country.capital}</b>
+                  </p>
+
+                  <p>
+                    Population:{" "}
+                    <b>{country.population.toLocaleString()}</b>
+                  </p>
+
+                  <p>
+                    Language:{" "}
+                    <b>{country.language || "Haijulikani"}</b>
+                  </p>
                 </div>
               </Link>
             ))
           ) : (
-            <div className={styles.pp}>
+            <div className="pp">
               <p>Bwana, add a valid country</p>
             </div>
           )}
 
-       
+          {search === "" && (
+            <Link to="/more" className="seeMore">
+              Hundreds + More Countries
+            </Link>
+          )}
         </div>
       </div>
     </>

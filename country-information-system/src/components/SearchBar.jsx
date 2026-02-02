@@ -1,37 +1,43 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import styles from "./SearchBar.module.css"; // your CSS module
+import "./SearchBar.css"; 
 
-function SearchBar({ onSearch }) {
-  const [search, setSearch] = useState("");
+export default function SearchBar({ onSearch }) {
+  const [inputValue, setInputValue] = useState("");
 
-  const handleSearch = () => {
-    if (onSearch) onSearch(search);
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    onSearch && onSearch(value); 
   };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSearch();
+      onSearch && onSearch(inputValue); 
     }
   };
 
+  const handleClick = () => {
+    onSearch && onSearch(inputValue); 
+  };
+
   return (
-    <div className={styles.search}>
+    <div className="search-bar">
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
-        className={styles.icon}
-        onClick={handleSearch}
+        className="search-icon"
+        onClick={handleClick}
       />
       <input
         type="text"
-        placeholder="search where you will never visit"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        placeholder="Search countries"
+        value={inputValue}
+        onChange={handleChange}
         onKeyDown={handleKeyPress}
+        className="search-input"
       />
     </div>
   );
 }
 
-export default SearchBar;

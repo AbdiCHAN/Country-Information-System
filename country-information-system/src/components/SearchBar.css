@@ -1,5 +1,5 @@
 .search-bar {
-  width: 100%;
+  
   padding: 0.75rem 1rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
@@ -7,6 +7,9 @@
   font-size: 1rem;
   outline: none;
   transition: border 0.2s;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  margin-top: 2rem;
 }
 
 .search-bar:focus {
